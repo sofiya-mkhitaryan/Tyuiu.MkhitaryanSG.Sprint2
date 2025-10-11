@@ -12,9 +12,9 @@ class Program
 
         Console.WriteLine("*****************************************************************************");
         Console.WriteLine("* Спринт #2                                                                 *");
-        Console.WriteLine("* Тема: Операции сравнения                                                  *");
-        Console.WriteLine("* Задание #0                                                                *");
-        Console.WriteLine("* Вариант #8                                                                *");
+        Console.WriteLine("* Тема: Логические операции                                                 *");
+        Console.WriteLine("* Задание #1                                                                *");
+        Console.WriteLine("* Вариант #26                                                                *");
         Console.WriteLine("* Выполнила: Мхитарян София Геворковна | РППб-25-1                          *");
         Console.WriteLine("*****************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                  *");
