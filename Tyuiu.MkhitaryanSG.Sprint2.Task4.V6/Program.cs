@@ -9,10 +9,10 @@ class Program
         Console.Title = "Спринт #2 | Выполнила: Мхитарян С. Г. | РППб-25-1";
 
         Console.WriteLine("*****************************************************************************");
-        Console.WriteLine("* Спринт #4                                                                 *");
+        Console.WriteLine("* Спринт #2                                                                 *");
         Console.WriteLine("* Тема: Тернарный оператор                                                  *");
-        Console.WriteLine("* Задание #3                                                                *");
-        Console.WriteLine("* Вариант #4                                                                *");
+        Console.WriteLine("* Задание #4                                                                *");
+        Console.WriteLine("* Вариант #6                                                                *");
         Console.WriteLine("* Выполнила: Мхитарян София Геворковна | РППб-25-1                          *");
         Console.WriteLine("*****************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                  *");
