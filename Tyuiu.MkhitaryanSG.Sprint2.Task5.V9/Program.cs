@@ -10,7 +10,7 @@ class Program
 
         Console.WriteLine("*****************************************************************************");
         Console.WriteLine("* Спринт #2                                                                 *");
-        Console.WriteLine("* Тема: Тернарный оператор                                                  *");
+        Console.WriteLine("* Тема: Оператор switch                                                     *");
         Console.WriteLine("* Задание #5                                                                *");
         Console.WriteLine("* Вариант #9                                                                *");
         Console.WriteLine("* Выполнила: Мхитарян София Геворковна | РППб-25-1                          *");
