@@ -26,27 +26,18 @@ class Program
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ                                                           *");
         Console.WriteLine("*****************************************************************************");
 
-        // Запрос у пользователя номера месяца и числа
-        Console.WriteLine("Введите число:");
-        int month = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите число (1-31):");
+        int d = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Введите номер месяца (1-12):");
-        int day = int.Parse(Console.ReadLine());
+        int m = int.Parse(Console.ReadLine());
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
 
-        try
-        {
-            // Используем введенные пользователем значения для вычисления следующей даты
-            string nextDate = ds.FindDateOfNextDay(day, month);
-            Console.WriteLine(nextDate); // Выводим результат
-        }
-        catch (ArgumentOutOfRangeException ex)
-        {
-            Console.WriteLine(ex.Message); // Обработка исключений
-        }
+        string nextDate = ds.FindDateOfNextDay(m, d);
+        Console.WriteLine($"Следующая дата: {nextDate}");
 
         Console.ReadKey();
     }

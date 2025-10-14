@@ -3,68 +3,55 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task5.V9.Lib
 {
     public class DataService : ISprint2Task5V9
     {
-        // Метод для определения, является ли год високосным
-        private bool IsLeapYear(int y)
-        {
-            return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
-        }
-
-        // Метод для получения количества дней в месяце с использованием switch case
-        private int GetDaysInMonth(int m, int y)
-        {
-            switch (m)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    return 31;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    return 30;
-                case 2:
-                    return IsLeapYear(y) ? 29 : 28;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(m), "Месяц должен быть в диапазоне от 1 до 12.");
-            }
-        }
-
         public string FindDateOfNextDay(int m, int d)
         {
-            // Предположим, что текущий год — 2023 (можно изменить на любой другой)
-            int year = 2023;
+            int nextDay = d;
+            int nextMonth = m;
 
-            // Проверка корректности месяца
-            if (m < 1 || m > 12)
-                throw new ArgumentOutOfRangeException(nameof(m), "Месяц должен быть в диапазоне от 1 до 12.");
+            // Количество дней в каждом месяце
+            int daysInMonth;
 
-            // Проверка корректности дня
-            int daysInCurrentMonth = GetDaysInMonth(m, year);
-            if (d < 1 || d > daysInCurrentMonth)
-                throw new ArgumentOutOfRangeException(nameof(d), "Неверный день для указанного месяца.");
+            switch (m)
+            {
+                case 1: // Январь
+                case 3: // Март
+                case 5: // Май
+                case 7: // Июль
+                case 8: // Август
+                case 10: // Октябрь
+                case 12: // Декабрь
+                    daysInMonth = 31;
+                    break;
+                case 4: // Апрель
+                case 6: // Июнь
+                case 9: // Сентябрь
+                case 11: // Ноябрь
+                    daysInMonth = 30;
+                    break;
+                case 2: // Февраль
+                    daysInMonth = 28; // Не учитываем високосные года
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("Неверный номер месяца.");
+            }
 
             // Определяем следующий день
-            if (d < daysInCurrentMonth)
+            if (d < daysInMonth)
             {
-                return $"{d + 1} {m}"; // Просто увеличиваем день
+                nextDay++;
             }
-            else
+            else if (d == daysInMonth)
             {
-                // Переход на следующий месяц
-                if (m == 12)
+                nextDay = 1;
+                nextMonth++;
+                if (nextMonth > 12) // Если переходим на следующий год
                 {
-                    return $"1 1"; // Переход на следующий год (год не выводится)
-                }
-                else
-                {
-                    return $"1 {m + 1}"; // Переход на следующий месяц
+                    nextMonth = 1; // Сброс на январь
                 }
             }
+
+            // Форматируем вывод в виде "DD.MM"
+            return $"{nextDay:D2}.{nextMonth:D2}";
         }
     }
 }
