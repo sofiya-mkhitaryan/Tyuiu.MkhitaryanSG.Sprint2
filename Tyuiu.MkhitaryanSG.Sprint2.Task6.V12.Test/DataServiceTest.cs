@@ -6,20 +6,20 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task6.V12.Test
     {
 
         [TestMethod]
-        public void Test()
+        public void FindDateOfPreviousDay()
         {
             DataService ds = new DataService();
 
-            Assert.AreEqual("09.09", ds.FindDateOfNextDay(9, 8));
-            Assert.AreEqual("01.10", ds.FindDateOfNextDay(9, 30));
-            Assert.AreEqual("01.02", ds.FindDateOfNextDay(1, 31));
-            Assert.AreEqual("01.01", ds.FindDateOfNextDay(12, 31));
+            Assert.AreEqual("2023.09.08", ds.FindDateOfPreviousDay(2023, 9, 9));
+            Assert.AreEqual("2023.09.30", ds.FindDateOfPreviousDay(2023, 10, 1));
+            Assert.AreEqual("2023.01.31", ds.FindDateOfPreviousDay(2023, 2, 1));
+            Assert.AreEqual("2022.12.31", ds.FindDateOfPreviousDay(2023, 1, 1));
 
             // Тестирование исключений для неверных значений месяца
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfNextDay(0, 15), "Месяц должен быть в диапазоне от 1 до 12.");
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfNextDay(13, 15), "Месяц должен быть в диапазоне от 1 до 12.");
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfNextDay(30, 2), "Неверный день для указанного месяца.");
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfNextDay(31, 4), "Неверный день для указанного месяца.");
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfPreviousDay(2023, 0, 15), "Месяц должен быть в диапазоне от 1 до 12.");
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfPreviousDay(2023, 13, 15), "Месяц должен быть в диапазоне от 1 до 12.");
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfPreviousDay(2023, 30, 2), "Неверный день для указанного месяца.");
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => ds.FindDateOfPreviousDay(2023, 31, 4), "Неверный день для указанного месяца.");
         }
     }
 }
