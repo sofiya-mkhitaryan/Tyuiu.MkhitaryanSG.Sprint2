@@ -17,7 +17,7 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task5.V9.Lib
                     daysInMonth = 31;
                     break;
                 case 2: 
-                    daysInMonth = 28; // или 29 при учёте високосного года
+                    daysInMonth = 29; // или 29 при учёте високосного года
                     break;
                 case 3:
                     daysInMonth = 31;
