@@ -27,7 +27,7 @@ class Program
         Console.WriteLine("*****************************************************************************");
 
         Console.WriteLine("Введите число (1-31):");
-        int n = int.Parse(Console.ReadLine());
+        int d = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Введите номер месяца (1-12):");
         int m = int.Parse(Console.ReadLine());
@@ -39,7 +39,7 @@ class Program
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
 
-        string previousDate = ds.FindDateOfPreviousDay(n, m, g);
+        string previousDate = ds.FindDateOfPreviousDay(g, m, d);
 
         Console.WriteLine($"Предыдущий день: {previousDate}");
 
