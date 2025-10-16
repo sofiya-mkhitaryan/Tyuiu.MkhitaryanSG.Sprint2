@@ -13,26 +13,44 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task5.V9.Lib
 
             switch (m)
             {
-                case 1: // Январь
-                case 3: // Март
-                case 5: // Май
-                case 7: // Июль
-                case 8: // Август
-                case 10: // Октябрь
-                case 12: // Декабрь
+                case 1: 
                     daysInMonth = 31;
                     break;
-                case 4: // Апрель
-                case 6: // Июнь
-                case 9: // Сентябрь
-                case 11: // Ноябрь
+                case 2: 
+                    daysInMonth = 28; // или 29 при учёте високосного года
+                    break;
+                case 3:
+                    daysInMonth = 31;
+                    break;
+                case 4:
                     daysInMonth = 30;
                     break;
-                case 2: // Февраль
-                    daysInMonth = 28; // Не учитываем високосные года
+                case 5:
+                    daysInMonth = 31;
+                    break;
+                case 6:
+                    daysInMonth = 30;
+                    break;
+                case 7:
+                    daysInMonth = 31;
+                    break;
+                case 8:
+                    daysInMonth = 31;
+                    break;
+                case 9:
+                    daysInMonth = 30;
+                    break;
+                case 10:
+                    daysInMonth = 31;
+                    break;
+                case 11:
+                    daysInMonth = 30;
+                    break;
+                case 12:
+                    daysInMonth = 31;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException("Неверный номер месяца.");
+                    throw new ArgumentOutOfRangeException("Месяц должен быть от 1 до 12.");
             }
 
             // Определяем следующий день
@@ -50,7 +68,6 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task5.V9.Lib
                 }
             }
 
-            // Форматируем вывод в виде "DD.MM"
             return $"{nextDay:D2}.{nextMonth:D2}";
         }
     }
