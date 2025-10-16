@@ -26,20 +26,20 @@ class Program
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ                                                           *");
         Console.WriteLine("*****************************************************************************");
 
-        Console.WriteLine("Введите год:");
-        int g = int.Parse(Console.ReadLine());
-
         Console.WriteLine("Введите число (1-31):");
-        int d = int.Parse(Console.ReadLine());
+        int n = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Введите номер месяца (1-12):");
         int m = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Введите год:");
+        int g = int.Parse(Console.ReadLine());
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
 
-        string previousDate = ds.FindDateOfPreviousDay(g, m, d);
+        string previousDate = ds.FindDateOfPreviousDay(n, m, g);
 
         Console.WriteLine($"Предыдущий день: {previousDate}");
 

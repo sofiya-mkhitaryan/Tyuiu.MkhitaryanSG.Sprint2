@@ -3,7 +3,7 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task6.V12.Lib
 {
     public class DataService : ISprint2Task6V12
     {
-        public string FindDateOfPreviousDay(int g, int m, int n)
+        public string FindDateOfPreviousDay(int n, int m, int g)
         {
             int daysInMonth = m switch
             {
@@ -59,8 +59,7 @@ namespace Tyuiu.MkhitaryanSG.Sprint2.Task6.V12.Lib
                 prevDay = daysInMonth; // последнее число предыдущего месяца
             }
 
-            // формируем строку даты в формате "год.месяц.день"
-            return prevYear + "." + prevMonth.ToString("D2") + "." + prevDay.ToString("D2");
+            return prevDay.ToString("D2") + "." + prevMonth.ToString("D2") + "." + prevYear;
         }
     }
 }
